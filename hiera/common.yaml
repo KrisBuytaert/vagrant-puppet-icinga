@@ -1,0 +1,33 @@
+---
+
+manage_firewall:
+  true
+
+yum::server_name:
+  yum
+
+our_yumrepo::yum_repo_server:
+  yum
+
+is_icinga_server: false
+nrpe_allowed_hosts: '10.0.0.198'
+icinga_plugins:
+  - 'pnp4nagios'
+  - 'checkpuppet'
+  - 'checkssh'
+  - 'checkload'
+icinga_collect_ipaddress: "%{::fqdn}"
+icinga_hostgroups: 'default'
+icinga_notification_period: '24x7'
+icinga_notifications_enabled: '1'
+icinga_plugins_checkalldisks_warning: '10%'
+icinga_plugins_checkalldisks_critical: '5%'
+icinga_checkmailq_mta_type: 'postfix'
+ntp_server: '2.centos.pool.ntp.org'
+
+
+
+consul_server: false
+consul_domain: 'prod.innternal.net'
+consul_join: ['10.0.0.213']
+
