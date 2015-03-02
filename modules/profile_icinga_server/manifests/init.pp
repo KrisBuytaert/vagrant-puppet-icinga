@@ -73,15 +73,6 @@
     }
 
 
-    icinga::user{'intelliplan':
-      email                         => 'developer@intelliplan.se',
-      pager                         => 'developer@intelliplan.se',
-      password                      => 'nope',
-      host_notification_commands    => 'notify-host-by-email',
-      service_notification_commands => 'notify-service-by-email',
-      host_notifications_enabled    => '1',
-      service_notifications_enabled => '1',
-                                                     }
 
 
 
